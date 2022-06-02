@@ -47,8 +47,8 @@ func main() {
 
 	// read through each zone file line by line, comparring as we go, only printing out the differences
 	// if the lines are the same, we don't print anything. if the left line is lexiographically greater
-	// than the right line, we print the left line as a deletion. If the right line is lexiographically
-	// greater than the left line, we print the right line as an addition.
+	// than the right line, we print the left line as a addition. If the right line is lexiographically
+	// greater than the left line, we print the right line as an deletion.
 
 	scanner1 := bufio.NewScanner(f1gz)
 	scanner2 := bufio.NewScanner(f2gz)
@@ -118,7 +118,6 @@ func add(line string) {
 		return
 	}
 
-	// print parts
 	fmt.Printf("+ %s %s\n", parts[0], parts[4])
 
 }
@@ -131,7 +130,6 @@ func remove(line string) {
 		return
 	}
 
-	// print parts
 	fmt.Printf("- %s %s\n", parts[0], parts[4])
 }
 
